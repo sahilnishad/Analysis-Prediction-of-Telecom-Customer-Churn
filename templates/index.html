@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telecom Customer Churn Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
+
+    <style>
+        input[type=number], select {
+            width: 25%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            background-color: #413f3f;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #2e2d2d;
+        }
+
+
+        .footer {
+           position: fixed;
+           left: 0;
+           bottom: 0;
+           width: 100%;
+           background-color: #413f3f;
+           color: white;
+           text-align: center;
+           
+        }
+        
+
+        .body {
+            text-align: center;
+            vertical-align: middle;
+            padding-top: 0% ;  
+            background-image: url('https://images.unsplash.com/photo-1520531158340-44015069e78e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1138&q=80');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .fab {
+            padding: 10px;
+            font-size: 30px;
+            width: 30px;
+            height:30px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 50%;
+        }
+
+        .fab:hover {
+            opacity: 0.7;
+        }
+
+        .fa-github {
+            background: #333;
+            color: white;
+        }
+        
+        .fa-linkedin {
+            background: #007bb5;
+            color: white;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <style>
+        body {
+          background-image: url('https://images.unsplash.com/photo-1520531158340-44015069e78e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1138&q=80');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+        }
+    </style>
+
+    
+
+    <main>
+        <div class="body">
+            <h1>Telecom Customer Churn Prediction</h1>        
+            {% if prediction %}
+                <p>Your customer will {{prediction}} </p>
+            {% endif %}     
+
+            <form method="POST" action="/">
+                <input type="number" name="gender" placeholder="Gender (female:0, male:1)" required="required" >
+                <input type="number" name="SeniorCitizen" placeholder="SeniorCitizen (No:0, Yes:1)" required="required"><br/>
+                <input type="number" name="Partner" placeholder="Partner (No:0, Yes:1)" required="required">
+                <input type="number" name="Dependents" placeholder="Dependents (No:0, Yes:1)" required="required"><br/>
+                <input type="number" name="tenure" placeholder="Tenure (eg.10)" required="required">
+                <input type="number" name="PhoneService" placeholder="Phone Service (No:0, Yes:1)" required="required"><br/>
+                <input type="number" name="MultipleLines" placeholder="Multiple Line (No:0, No phone service:1, Yes:2)" required="required">
+                <input type="number" name="InternetService" placeholder="Internet Service (DSL:0, Fiber:1, No:2)" required="required"><br/>
+                <input type="number" name="OnlineSecurity" placeholder="Online Security (No:0, No internet service:1, Yes:2)" required="required">
+                <input type="number" name="OnlineBackup" placeholder="Online Backup (No:0, No internet service:1, Yes:2)" required="required"><br/>
+                <input type="number" name="DeviceProtection" placeholder="Device Protection (No:0, No internet service:1, Yes:2)" required="required">
+                <input type="number" name="TechSupport" placeholder="Tech Support (No:0, No internet service:1, Yes:2)" required="required"><br/>
+                <input type="number" name="StreamingMovies" placeholder="Streaming Movies (No:0, No internet service:1, Yes:2)" required="required">
+                <input type="number" name="Contract" placeholder="Contract (monthly:0, 1 year:1, 2 year:2)" required="required"><br/>
+                <input type="number" name="PaperlessBilling" placeholder="Paperless Billing (No:0, Yes:1)" required="required">
+                <input type="number" name="PaymentMethod" placeholder="Payment Method (bank transfer:0, credt card:1, check:2, post:3)" required="required"><br/>
+                <input type="number" name="MonthlyCharges" placeholder="MonthlyCharges (eg. 100)" step="0.01" min="0" max="1000" required="required">
+                <input type="number" name="TotalCharges" placeholder="Total Charges (eg. 300)" required="required"><br/>
+                
+
+                <input type="submit" class="button" value="Predict">
+            </form>
+
+            
+
+
+        </div> 
+    </main>
+
+    <footer>
+        <div class="footer">
+            <a href="https://github.com/sahilnishad/University-Admission-Prediction">
+                <i class="fab fa-github"></i>
+            </a> 
+            <a href="https://linkedin.com/in/sahilnishad">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mohd-qayam-hasan-0611571a4/">
+                <i class="fab fa-linkedin"></i>
+            </a>
+
+            <a href="https://linkedin.com/in/saad-abbasi-a82b531a4/">
+                <i class="fab fa-linkedin"></i>
+            </a>
+
+            <a href="https://linkedin.com/in/mohd-ali-rizvi-37b5871a7/">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            
+        </div>
+    </footer>
+
+
+
+</body>
+</html>					
